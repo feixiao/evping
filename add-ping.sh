@@ -8,16 +8,16 @@
 
 # Constants
 EV_VERSION=2.0.22-stable
-EV_ROOT=libevent-$EV_VERSION
-EV_SPOOL=/spool/network/Archive
-EV_FILE=libevent-$EV_VERSION.tar.gz
+EV_ROOT=libevent-${EV_VERSION}
+EV_SPOOL=./
+EV_FILE=${EV_ROOT}.tar.gz
 EV_TARGZ=$EV_SPOOL/$EV_FILE
-EV_URL=http://sourceforge.net/projects/levent/files/libevent/libevent-2.0/$EV_FILE
+#EV_URL=http://sourceforge.net/projects/levent/files/libevent/libevent-2.0/$EV_FILE
 
 #
 # Welcome
 #
-echo "This shell script adds the ping ICMP protocol to libevent 2.0.22"
+echo "This shell script adds the ping ICMP protocol to libevent 2.1.18"
 echo
 
 #
@@ -132,4 +132,4 @@ echo "Configure libevent ... "
 # Compile
 #
 echo "Compile libevent ... "
-(cd $EV_ROOT && make)
+(cd $EV_ROOT && make -j4)
